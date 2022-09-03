@@ -1,0 +1,163 @@
+// out : ./
+* {
+    //初始化
+    margin: 0; 
+    padding: 0;
+    // 盒字自己内减
+    box-sizing: border-box;
+}
+body{
+    // 100%的窗口宽度
+    height: 100vh;
+    display: flex;
+    // 主轴对齐
+    justify-content: center;
+    // 侧轴对齐
+    align-items: center;
+    background-color: #fefefe;
+    overflow: hidden;
+    // 打开密码灯后的效果类
+    &.show-password{
+        background-color: #000;
+        .container{
+            background-color: rgba(255,255,255,0.05);
+            box-shadow: 0 8px 50px rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        h1{
+            color: #fff;
+        }
+        .ipt-box{
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        input{
+            color: #fff;
+            border: 1px solid #000;
+        }
+        // id选择器
+        #password{
+            color: #000;
+        }
+        .beam{
+            background-color: skyblue;
+        }
+        .btn-login{
+            background-color: #fff;
+            color: #000;
+        }
+        .eye{
+            color: #fff;
+        }
+    }
+    // 把body的前后伪元素给去掉
+    &.show-password::before,
+    &.show-password::after{
+        display: none;
+    }
+}
+// 弄两个原点缀一下背景
+body::before,
+body::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+body::before{
+    width: 30vh;
+    height: 30vh;
+    background-color: #7875ac40;
+    top: 10vh;
+    left: -10vh;
+}
+body::after{
+    width: 60vh;
+    height: 60vh;
+    background-color: #7875ac20;
+    bottom: -15vh;
+    right: -15vh;
+}
+.container{
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: 400px;
+    background-color: #fff;
+    // 阴影出来
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    display: flex;
+    // 变换主轴方向为垂直方向
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 40px;
+    // 如果没有75% 就默认内容撑开盒字 一样是居中的
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    width: 75%;
+}
+.ipt-box{
+    width: 75%;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    input{
+        width: 100%;
+        font-size: 16px;
+        padding: 15px;
+        border: 1px solid #e3e3e3;
+        border-radius: 8px;
+        outline: none;
+        background: none;
+        position: relative;
+        z-index: 2;
+    }
+    // 密码框的小眼睛
+    .eye{
+        position: absolute;
+        top:50%;
+        right: 15px;
+        // 眼睛对不齐可以直接用位移解决
+        transform: translateY(-50%);
+        z-index: 3;
+        // 弄上去可点击的手势
+        cursor: pointer;
+    }
+    // 灯光
+    .beam{
+        width: 100vw;
+        height: 25vw;
+        // background-color: yellow;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: 30px;
+        clip-path: polygon(100% 50%,100% 50%,0 0,0 100%);
+        // --beam-deg 为css自定义属性，这里用做设置灯光的角度
+        // 这个值会在js中进行计算
+        transform: translateY(-50%) rotate(var(--beam-deg,0));
+        // 旋转中心到小眼睛那
+        transform-origin: 100% 50%;
+        // ease-out 是减速
+        transition: transform 0.2s ease-out;
+    }
+}
+.btn-login{
+    width: 75%;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background-color: #7875ac;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-indent: 10px;
+    cursor: pointer;
+
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>带密码灯照射的登录界面</title>
+    <!-- 引入字体图标库 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="container ">
+        <h1>登录</h1>
+        <div class="ipt-box">
+            <!-- autocomplete属性为on时在第二次输入时会有自动提示，
+            而autocomplete属性为off时在第二次输入时并不会有提示。  -->
+            <input type="text" name="" id="" placeholder="账号" autocomplete="off">
+        </div>
+        <div class="ipt-box">
+            <input type="password" name="" id="password" placeholder="密码" autocomplete="off">
+            <i class="eye fa fa-eye-slash"></i>
+            <div class="beam"></div>
+        </div>
+        <button class="btn-login">登录</button>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>
