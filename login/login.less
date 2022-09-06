@@ -16,6 +16,16 @@ body{
     align-items: center;
     background-color: #fefefe;
     overflow: hidden;
+    .register-box{
+        .layui-form-item{
+            width: 75%;
+            // background-color: #7875ac;
+            color: #7875ac;
+            .layui-form-label{
+                width: 25%;
+            }
+        }
+    }
     // 打开密码灯后的效果类
     &.show-password{
         background-color: #000;
@@ -41,9 +51,18 @@ body{
         .beam{
             background-color: skyblue;
         }
-        .btn-login{
+        .btn-login,
+        .link-register{
             background-color: #fff;
             color: #000;
+            button{
+                background-color: #fff;
+                color: #000;
+            }
+            a{
+                background-color: #fff;
+                color: #000;
+            }
         }
         .eye{
             color: #fff;
@@ -98,6 +117,7 @@ h1{
     letter-spacing: 10px;
     margin-bottom: 30px;
     width: 75%;
+    color: plum;
 }
 .ipt-box{
     width: 75%;
@@ -146,12 +166,21 @@ h1{
         transition: transform 0.2s ease-out;
     }
 }
-.btn-login{
+.btn{
+    width: 75%;
+    background-color: red;
+}
+.btn-login,
+.link-register,
+.btn-register,
+.link-login{
     width: 75%;
     height: 50px;
-    margin-top: 30px;
+    margin-top: 15px;
     border: none;
     outline: none;
+    text-align: center;
+    line-height: 50px;
     background-color: #7875ac;
     color: #fff;
     border-radius: 8px;
@@ -159,5 +188,38 @@ h1{
     letter-spacing: 8px;
     text-indent: 10px;
     cursor: pointer;
-
+    button{
+        width: 75%;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: #7875ac;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 18px;
+        letter-spacing: 8px;
+        text-indent: 10px;
+        cursor: pointer;
+    }
+}
+.btn-register{
+    margin-top: -6px;
+}
+.link-register,
+.link-login{
+    a{
+        display: inline-block;
+        text-decoration: none;
+        width: 75%;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: #7875ac;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 18px;
+        letter-spacing: 8px;
+        text-indent: 10px;
+        cursor: pointer;
+    }
 }

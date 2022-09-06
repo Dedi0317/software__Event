@@ -11,6 +11,13 @@ body {
   background-color: #fefefe;
   overflow: hidden;
 }
+body .register-box .layui-form-item {
+  width: 75%;
+  color: #7875ac;
+}
+body .register-box .layui-form-item .layui-form-label {
+  width: 25%;
+}
 body.show-password {
   background-color: #000;
 }
@@ -35,7 +42,18 @@ body.show-password #password {
 body.show-password .beam {
   background-color: skyblue;
 }
-body.show-password .btn-login {
+body.show-password .btn-login,
+body.show-password .link-register {
+  background-color: #fff;
+  color: #000;
+}
+body.show-password .btn-login button,
+body.show-password .link-register button {
+  background-color: #fff;
+  color: #000;
+}
+body.show-password .btn-login a,
+body.show-password .link-register a {
   background-color: #fff;
   color: #000;
 }
@@ -85,6 +103,7 @@ h1 {
   letter-spacing: 10px;
   margin-bottom: 30px;
   width: 75%;
+  color: plum;
 }
 .ipt-box {
   width: 75%;
@@ -124,10 +143,54 @@ h1 {
   transform-origin: 100% 50%;
   transition: transform 0.2s ease-out;
 }
-.btn-login {
+.btn {
+  width: 75%;
+  background-color: red;
+}
+.btn-login,
+.link-register,
+.btn-register,
+.link-login {
   width: 75%;
   height: 50px;
-  margin-top: 30px;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  text-align: center;
+  line-height: 50px;
+  background-color: #7875ac;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  letter-spacing: 8px;
+  text-indent: 10px;
+  cursor: pointer;
+}
+.btn-login button,
+.link-register button,
+.btn-register button,
+.link-login button {
+  width: 75%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #7875ac;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  letter-spacing: 8px;
+  text-indent: 10px;
+  cursor: pointer;
+}
+.btn-register {
+  margin-top: -6px;
+}
+.link-register a,
+.link-login a {
+  display: inline-block;
+  text-decoration: none;
+  width: 75%;
+  height: 50px;
   border: none;
   outline: none;
   background-color: #7875ac;
